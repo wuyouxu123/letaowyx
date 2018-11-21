@@ -24,6 +24,9 @@ $(function () {
             min: 2,
             max: 6,
             message: '用户名长度必须在2到6之间'
+          },
+          callback: {
+            message: '用户名不存在'
           }
         }
       },
@@ -38,6 +41,9 @@ $(function () {
             min: 6,
             max: 12,
             message: '用户名长度必须在6到12之间'
+          },
+          callback: {
+            message: '密码错误'
           }
         }
       }
@@ -60,10 +66,10 @@ $(function () {
           location.href = "index.html";
         }
         if (info.error === 1000) {
-          alert(info.message)
+          $("#form").data('bootstrapValidator').updateStatus("username", "INVALID", "callback");
         }
         if (info.error === 1001) {
-          alert(info.message)
+          $("#form").data('bootstrapValidator').updateStatus("password", "INVALID", "callback");
         }
       }
     })
