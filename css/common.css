@@ -33,12 +33,12 @@ ul {
   height: 100%;
   background-color: #222D32;
   z-index: 999;
-  /* transition: left 1s; */
+  transition: left 1s;
 }
 
-/* .left-side.hidemenu {
+.left-side.hidemenu {
   left: -180px;
-} */
+}
 
 .left-side .brand {
   background-color: #367FA9;
@@ -106,6 +106,7 @@ ul {
   padding-left: 180px;
   padding-top: 50px;
   height: 2000px;
+  transition: padding-left 1s;
   /* background-color: rgb(206, 228, 171); */
 }
 
@@ -118,9 +119,14 @@ ul {
   height: 50px;
   width: 100%;
   padding-left: 180px;
+  transition: padding-left 1s;
   left: 0;
   top: 0;
   background-color: #3C8DBC;
+}
+
+.right-side .topbar.hidemenu {
+  padding-left: 0px;
 }
 
 .right-side .topbar .icon-left,

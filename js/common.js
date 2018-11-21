@@ -5,6 +5,18 @@ $(function () {
   });
 
   $(document).ajaxStop(function () {
-    NProgress.done();
+    setTimeout(function () {
+      NProgress.done();
+    }, 500);
   });
+
+  $("#category").click(function () {
+    $(this).next().stop().slideToggle();
+  });
+
+  $(".icon-left").click(function () {
+    $(".left-side").toggleClass("hidemenu");
+    $(".right-side").toggleClass("hidemenu");
+    $(".topbar").toggleClass("hidemenu");
+  })
 })
