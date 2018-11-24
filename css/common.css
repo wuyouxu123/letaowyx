@@ -6,6 +6,10 @@
   margin-top: 150px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
 .panel .panel-title {
   height: 40px;
   line-height: 40px;

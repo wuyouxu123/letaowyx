@@ -1,14 +1,4 @@
 $(function () {
-  //顶部进度条
-  $(document).ajaxStart(function () {
-    NProgress.start();
-  });
-
-  $(document).ajaxStop(function () {
-    setTimeout(function () {
-      NProgress.done();
-    }, 500);
-  });
   // 二级菜单下拉切换 
   $("#category").click(function () {
     $(this).next().stop().slideToggle();
@@ -38,3 +28,14 @@ $(function () {
     })
   })
 })
+//放在入口函数外面
+//顶部进度条
+$(document).ajaxStart(function () {
+  NProgress.start();
+});
+
+$(document).ajaxStop(function () {
+  setTimeout(function () {
+    NProgress.done();
+  }, 500);
+});
