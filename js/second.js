@@ -109,6 +109,29 @@ $(function () {
         }
       }
     }
-  })
+  });
+
+  $("#form").on('success.form.bv', function (e) {
+    e.preventDefault();
+    //使用ajax提交逻辑
+    $.ajax({
+      type: 'post',
+      url: '/category/addSecondCategory',
+      dataType: 'json',
+      data: $("#form").serialize(),
+      success: function (info) {
+        if (info.success) {
+          $("#addmodal").modal("hide");
+
+          currentPage = 1;
+          render();
+
+          $("#form").data('bootstrapValidator').resetForm(true);
+          $("#dropdown1").text("请选择一级分类");
+          $("#img1 img").attr("src", "./images/none.png");
+        }
+      }
+    })
+  });
 
 })
